@@ -1,8 +1,10 @@
 // Find elements
 const fetchUsersBtn = document.querySelector('.btn');
 const usersList = document.querySelector('.users-list');
+const inputQuantity = document.querySelector('.input-quantity');
 // console.log(usersList);
 // console.log(fetchUsersBtn);
+let valueQuantity = 'https://jsonplaceholder.typicode.com/users';
 
 // Add listener to element
 fetchUsersBtn.addEventListener('click',
@@ -12,8 +14,13 @@ fetchUsersBtn.addEventListener('click',
             .catch((error) => console.log(error));
     });
 
+inputQuantity.addEventListener('input', (evt) => {
+    valueQuantity =
+        `https://jsonplaceholder.typicode.com/users?_limit=${evt.currentTarget.value}`;
+});
+
 function fetchUsers() {
-    return fetch('https://jsonplaceholder.typicode.com/users')
+    return fetch(valueQuantity)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.status);
