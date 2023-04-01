@@ -1,0 +1,20 @@
+p {
+    margin: 0;
+}
+
+.btn {
+    height: 30px;
+    width: 150px;
+
+    border: none;
+    border-radius: 4px;
+    
+    background-color: #2fb9dc;
+
+    text-transform: uppercase;
+}
+
+.users-list {
+    margin: 0;
+    padding: 24px;
+}
